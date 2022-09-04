@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import GalleryList from '../GalleryList/GalleryList';
 
 import './App.css';
 
@@ -34,24 +35,8 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>My gallery</p>
-      {
-        galleryList.map((gallery) => {
-          console.log(gallery);
+      <GalleryList galleryList={galleryList} />
 
-          return <div>
-
-            <img style={{ width: 200 + 'px' }} src={gallery.path} />
-
-            <br />
-            <button>Like</button>
-            <br />
-
-            <br />
-          </div>
-
-
-        })
-      }
     </div>
 
   );
