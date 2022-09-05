@@ -2,11 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 
 
-function GalleryItem({ gallery, likeImage }) {
+function GalleryItem({ gallery, likeImage, toggleImage }) {
     const [toggle, setToggle] = useState(false);
     return <div>
 
-        <button><img style={{ width: 300 + 'px' }} src={gallery.path} /></button>
+        <button onClick={() => toggleImage(gallery.id)}><img style={{ width: 300 + 'px' }} src={gallery.path} /></button>
 
         <br />
         <br />
@@ -18,6 +18,8 @@ function GalleryItem({ gallery, likeImage }) {
         <br />
     </div>
 }
+
+
 
 export default GalleryItem;
 

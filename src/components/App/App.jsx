@@ -18,6 +18,10 @@ function App() {
     console.log('in likeImage', id);
   }
 
+  const toggleImage = (id) => {
+    console.log('in toggleImage', id);
+  }
+
   // console.log('stuff');
   const fetchGalleryList = () => {
     axios({
@@ -42,7 +46,7 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>My gallery</p>
-      <GalleryList galleryList={galleryList} likeImage={likeImage} />
+      <GalleryList galleryList={galleryList} likeImage={likeImage} toggleImage={toggleImage} />
 
 
     </div>
