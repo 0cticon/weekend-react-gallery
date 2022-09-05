@@ -1,20 +1,14 @@
-function GalleryList({ galleryList }) {
+import axios from "axios";
+import { useState } from "react";
+import GalleryItem from "../GalleryItem/GalleryItem";
+{/* <Gallery></Gallery>; */ }
+function GalleryList({ galleryList, likeImage }) {
     return (
         <div>
             {
                 galleryList.map((gallery) => {
-                    console.log(gallery);
-
-                    return <div key={gallery.id}>
-
-                        <img style={{ width: 300 + 'px' }} src={gallery.path} />
-                        <br />
-                        <button>Like</button>
-                        <br />
-                        <br />
-                    </div>
-
-
+                    // console.log(gallery);
+                    return <GalleryItem key={gallery.id} gallery={gallery} likeImage={likeImage} />
                 })
             }
         </div>
