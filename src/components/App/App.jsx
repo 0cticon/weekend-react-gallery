@@ -15,7 +15,17 @@ function App() {
   }, []);
 
   const likeImage = (id) => {
+    let clickCounter = 0;
     console.log('in likeImage', id);
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${id}`,
+    }).then(response => {
+      fetchGalleryList();
+      console.log('in PUT');
+    }).catch(error => {
+      alert('something wrong');
+    });
   }
 
   const toggleImage = (id) => {
