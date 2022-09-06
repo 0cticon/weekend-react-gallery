@@ -4,16 +4,16 @@ import GalleryList from '../GalleryList/GalleryList';
 import GalleryItem from '../GalleryItem/GalleryItem';
 import './App.css';
 
-
+// main app file
 function App() {
   const [galleryList, setGalleryList] = useState([]);
 
-
+  // similar to onReady when page loads
   useEffect(() => {
     // console.log('useEffect');
     fetchGalleryList();
   }, []);
-
+  // PUT request for like button
   const likeImage = (id) => {
     let clickCounter = 0;
     console.log('in likeImage', id);
@@ -27,11 +27,11 @@ function App() {
       alert('something wrong');
     });
   }
-
+  // console log stopped working, but toggle works toggleImage was 'delared in more than one spot was the fault i was getting, switched to setToggle and console.log stopped working.
   const toggleImage = (id) => {
     console.log('in toggleImage', id);
   }
-
+  // request of server data to display on page
   // console.log('stuff');
   const fetchGalleryList = () => {
     axios({
@@ -56,6 +56,7 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>My gallery</p>
+      {/* props to pass to other components */}
       <GalleryList galleryList={galleryList} likeImage={likeImage} toggleImage={toggleImage} />
 
 

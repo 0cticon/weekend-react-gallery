@@ -2,7 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 
 
-
+// individual gallery items functions when clicked
+// description
 function GalleryItem({ gallery, likeImage, toggleImage }) {
     const [toggle, setToggle] = useState(true);
     toggleImage = () => {
@@ -16,7 +17,7 @@ function GalleryItem({ gallery, likeImage, toggleImage }) {
 
     return <div>
 
-
+        {/* like counter */}
         <button id="like" onClick={(id) => setToggle(!toggle)}><img style={{ width: 300 + 'px' }} src={gallery.path} />
             {toggle ? <div> </div> : <div>{gallery.description}</div>}</button>
 
